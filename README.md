@@ -1,7 +1,7 @@
 # AML_NLU
 
-## 3.CLIP: Image captioning classification (1 Point)
-In this section we want to test what limitations the CLIP model can have. 
+## 3. CLIP: Image captioning classification (1 Point)
+In this section we want to test what limitations the CLIP model can have. For this you should think of descriptions that make the classification task difficult.
 
 ![image](https://user-images.githubusercontent.com/98495468/187804121-3107c28a-1fc8-47eb-8cf0-e8fb9721da4d.png)
 
