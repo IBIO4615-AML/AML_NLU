@@ -30,7 +30,16 @@ model = gensim.models.Word2Vec(
     workers=...,
 )
 ```
- 
+5. Train the model and obtain the normalized vectors for each of the words in your vocabulary. For three words of your choice, you must find and submit the 5 words that are more similar and the similarity value.
+
+```bash
+More similar to: 'bad'
+[('terrible', 0.6617082357406616),
+ ('horrible', 0.6136840581893921),
+ ('crappy', 0.5805919170379639),
+ ('good', 0.5770503878593445),
+ ('shabby', 0.5749340653419495)]
+``` 
 ## 3. Attention visualization (1 Point)
 
 Now, we want to visualize the attention mechanism. To do this, visit this repository https://github.com/jessevig/bertviz and do the Interactive Colab Tutorial https://colab.research.google.com/drive/1s8XCCyxsKvNRWNzjWi5Nl8ZAYZ5YkLm_#scrollTo=p_Mlw1LNVIkq. 
