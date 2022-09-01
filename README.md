@@ -20,7 +20,7 @@ In the first part of this task you are going to do your own word embedding using
 194437    [really, like, it, becasue, it, works, well, w...
 194438    [product, as, described, have, wasted, lot, of...
 ```
-
+4. You must initialize the word2vec model. Define the size of the vectors and the window to use, you can include as many parameters as you consider relevant. Check the documentation at https://tedboy.github.io/nlps/generated/generated/gensim.models.Word2Vec.__init__.html#gensim.models.Word2Vec.__init__ to see what parameters are available
 
  
 ## 3. Attention visualization (1 Point)
