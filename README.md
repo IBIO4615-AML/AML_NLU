@@ -7,11 +7,10 @@
 1. Select an image from internet or take photo that you think is difficult to classify.
 2. Use the CLIP/caption_classification.py and change the posible descriptions to the image.
 
-   ```bash
-   #Example
-   inputs = processor(text=["image of two cats","image of two cats sleeping"], images=image, return_tensors="pt", padding=True)
-
-   ```
+```bash
+#Example
+inputs = processor(text=["image of two cats","image of two cats sleeping"], images=image, return_tensors="pt", padding=True)
+```
 
 3.See in the line 16 the probability of each description.
 4. Try to do the most specific descriptions in order to see the limitation in CLIP model.
