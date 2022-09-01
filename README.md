@@ -6,9 +6,9 @@ Now, we want to visualize the attention mechanism. To do this, visit this reposi
 
 1. Choose a sentence to analize.
 2. Let's see the self-attention in your sentence.
-![image](https://user-images.githubusercontent.com/98495468/187809182-826e373d-a57d-4604-b9cb-2ce79f257e5e.png)
+* ![image](https://user-images.githubusercontent.com/98495468/187809182-826e373d-a57d-4604-b9cb-2ce79f257e5e.png)
 ### Note: We want to see the importance of each word give to the others. See also the Query, Key and QxK values (click in the +)
-![image](https://user-images.githubusercontent.com/98495468/187809410-9536b56a-bd6d-4516-aadd-aba6fcc968d2.png)
+* ![image](https://user-images.githubusercontent.com/98495468/187809410-9536b56a-bd6d-4516-aadd-aba6fcc968d2.png)
 3. Analize this interactions in different layers and heads, then, answer the fllowing questions:
 -> d
 
