@@ -5,7 +5,7 @@ In this section we want to test what limitations the CLIP model can have. For th
 
 ![image](https://user-images.githubusercontent.com/98495468/187804121-3107c28a-1fc8-47eb-8cf0-e8fb9721da4d.png)
 
-1. Select an image from internet or take photo that you think is difficult to classify.
+1. Select an image from internet or take a photo that you think could be difficult to classify.
 2. Open the CLIP/caption_classification.py code. Add your image with the url or by uploading a file.
 
 ```bash
