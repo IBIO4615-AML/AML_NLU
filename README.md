@@ -6,6 +6,7 @@ In the first part of this task you are going to do your own word embedding using
 1. we are going to use a subset of Amazon reviews from the Cell Phones & Accessories category. Download the datset from http://snap.stanford.edu/data/amazon/productGraph/categoryFiles/reviews_Cell_Phones_and_Accessories_5.json.gz
 2. Open the code available in Codes/embeding.py. 
 3. After loading the dataset, you will need to prepare the data of the column reviewText to be converted to numeric vectors. The model should receive an array where each phrase is a row and the words are separated.
+
 ```bash
 #Example
 0         [they, look, good, and, stick, good, just, don...
@@ -22,6 +23,13 @@ In the first part of this task you are going to do your own word embedding using
 ```
 4. You must initialize the word2vec model. Define the size of the vectors and the window to use, you can include as many parameters as you consider relevant. To see what parameters are available check the documentation at: https://tedboy.github.io/nlps/generated/generated/gensim.models.Word2Vec.__init__.html#gensim.models.Word2Vec.__init__ 
 
+```bash
+model = gensim.models.Word2Vec(
+    window=...,
+    min_count=...,
+    workers=...,
+)
+```
  
 ## 3. Attention visualization (1 Point)
 
