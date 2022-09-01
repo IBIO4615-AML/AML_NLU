@@ -6,11 +6,13 @@ Now, we want to visualize the attention mechanism. To do this, visit this reposi
 
 1. Choose a sentence to analize.
 2. Let's see the self-attention in your sentence.
-* ![image](https://user-images.githubusercontent.com/98495468/187809182-826e373d-a57d-4604-b9cb-2ce79f257e5e.png)
+ ![image](https://user-images.githubusercontent.com/98495468/187809182-826e373d-a57d-4604-b9cb-2ce79f257e5e.png)
 ### Note: We want to see the importance of each word give to the others. See also the Query, Key and QxK values (click in the +)
-* ![image](https://user-images.githubusercontent.com/98495468/187809410-9536b56a-bd6d-4516-aadd-aba6fcc968d2.png)
+ ![image](https://user-images.githubusercontent.com/98495468/187809410-9536b56a-bd6d-4516-aadd-aba6fcc968d2.png)
 3. Analize this interactions in different layers and heads, then, answer the fllowing questions:
--> d
+* What are the most important words in your sentence?
+* Why do you think is the reason of that?
+* Do you see differences between the heads? What is the importance of the multi-head attention in this models?
 
 ## 4. CLIP: Image captioning classification (1 Point)
 In this section we want to test what limitations the CLIP model can have. For this you should think of descriptions that make the classification task difficult.
