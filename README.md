@@ -30,7 +30,7 @@ model = gensim.models.Word2Vec(
     workers=...,
 )
 ```
-5. Train the model and obtain the normalized vectors for each of the words in your vocabulary. For three words of your choice, you must find and submit the 5 words that are more similar and the similarity value.
+5. Train the model and obtain the normalized vectors for each of the words in your vocabulary. For three words of your choice, you must find and submit the 5 words that are more similar and their similarity value.
 
 ```bash
 More similar to: 'bad'
