@@ -10,7 +10,8 @@ In this section we want to test what limitations the CLIP model can have. For th
 
 ```bash
 #Example
-inputs = processor(text=["image of two cats","image of two cats sleeping"], images=image, return_tensors="pt", padding=True)
+url = "http://images.cocodataset.org/val2017/000000039769.jpg"
+image = Image.open(requests.get(url, stream=True).raw)
 ```
 3. Change the two posible descriptions of the image.
 ```bash
