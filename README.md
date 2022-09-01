@@ -1,5 +1,10 @@
 # AML_NLU
 
+## 1. Word embedding (1 Point)
+
+
+
+ 
 ## 3. Attention visualization (1 Point)
 
 Now, we want to visualize the attention mechanism. To do this, visit this repository https://github.com/jessevig/bertviz and do the Interactive Colab Tutorial https://colab.research.google.com/drive/1s8XCCyxsKvNRWNzjWi5Nl8ZAYZ5YkLm_#scrollTo=p_Mlw1LNVIkq. 
@@ -7,7 +12,7 @@ Now, we want to visualize the attention mechanism. To do this, visit this reposi
 1. Choose a sentence to analize.
 2. Let's see the self-attention in your sentence.
  ![image](https://user-images.githubusercontent.com/98495468/187809182-826e373d-a57d-4604-b9cb-2ce79f257e5e.png)
-### Note: We want to see the importance of each word give to the others. See also the Query, Key and QxK values (click in the +)
+#### Note: We want to see the importance of each word give to the others. See also the Query, Key and QxK values (click in the +)
  ![image](https://user-images.githubusercontent.com/98495468/187809410-9536b56a-bd6d-4516-aadd-aba6fcc968d2.png)
 3. Analize this interactions in different layers and heads, then, answer the fllowing questions:
 * What are the most important words in your sentence?
