@@ -40,6 +40,37 @@ More similar to: 'bad'
  ('good', 0.5770503878593445),
  ('shabby', 0.5749340653419495)]
 ``` 
+
+## 2. Transformers training to text generation using Wikitex2 (1.5 Points)
+
+Transformers is a powerfull architecture to NLU. This model allow us to predict the missing words using the context. Wikitext is a database of Wikipedia's articles but substracting some words. One extract of one text example is the following:
+
+```bash
+= Super Mario Land =
+
+ Super Mario Land is a 1989 side @-@ scrolling platform video game , the first in the Super Mario Land series , developed and published by Nintendo as a launch title for their Game Boy handheld game console . (...)
+```
+
+1. Use the following command to train a transformers network:
+
+```bash
+
+python transformers.py --task train
+
+```
+
+2. You also can prove the model using the following command:
+
+```bash
+
+python transformers.py --task demo --text Try your own text and @-@ the performance
+
+```
+
+#### Note: Use the @-@ to generate the word
+
+3. We don't want you to do the perfect model, just prupose 4 different experiments and show us the input text and the prediction text in each experiment.
+
 ## 3. Attention visualization (1 Point)
 
 Now, we want to visualize the attention mechanism. To do this, visit this repository https://github.com/jessevig/bertviz and do the Interactive Colab Tutorial https://colab.research.google.com/drive/1s8XCCyxsKvNRWNzjWi5Nl8ZAYZ5YkLm_#scrollTo=p_Mlw1LNVIkq. 
