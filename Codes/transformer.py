@@ -146,7 +146,7 @@ import copy
 import time
 
 criterion = nn.CrossEntropyLoss()
-lr = 0.1  # learning rate
+lr = 5.0  # learning rate
 optimizer = torch.optim.SGD(model.parameters(), lr=lr)
 scheduler = torch.optim.lr_scheduler.StepLR(optimizer, 1.0, gamma=0.95)
 
@@ -200,7 +200,7 @@ def evaluate(model: nn.Module, eval_data: Tensor) -> float:
 
 def begin():
     best_val_loss = float('inf')
-    epochs = 6
+    epochs = 60
     best_model = None
     print(val_iter)
     for epoch in range(1, epochs + 1):
@@ -240,15 +240,15 @@ def demo(model,text):
     for i in range(output.size(0)):
         list_output.append(output[i].item())
     output=vocab.lookup_tokens(list_output)
-    print(output)
+    print(str.join(" ",output))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--task', type=str, default='train',
                         help='Task to train/demo (default: train)')
-    parser.add_argument('--load', type=str, default='checkpoints/6.pth',
+    parser.add_argument('--load', type=str, default='checkpoints/24.pth',
                         help='Checkpoint path')
-    parser.add_argument('--text', type=str, default=' Super Mario Land is a 1989 side @-@ scrolling platform video game , the first in the Super Mario Land series , developed and published by Nintendo for their Game Boy.',
+    parser.add_argument('--text', type=str, default='My car is red and my @-@ does not work yet',
                         help='Demo text')
     args = parser.parse_args()
     if args.task=='train':
