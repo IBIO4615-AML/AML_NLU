@@ -7,6 +7,9 @@ import torch.nn.functional as F
 from torch.nn import TransformerEncoder, TransformerEncoderLayer
 from torch.utils.data import dataset
 import os
+import argparse
+from torch.utils.data import DataLoader
+
 
 class TransformerModel(nn.Module):
 
@@ -134,8 +137,8 @@ def get_batch(source: Tensor, i: int) -> Tuple[Tensor, Tensor]:
 ntokens = len(vocab)  # size of vocabulary
 emsize = 200  # embedding dimension
 d_hid = 200  # dimension of the feedforward network model in nn.TransformerEncoder
-nlayers = 2  # number of nn.TransformerEncoderLayer in nn.TransformerEncoder
-nhead = 2  # number of heads in nn.MultiheadAttention
+nlayers = 6  # number of nn.TransformerEncoderLayer in nn.TransformerEncoder
+nhead = 8  # number of heads in nn.MultiheadAttention
 dropout = 0.2  # dropout probability
 model = TransformerModel(ntokens, emsize, nhead, d_hid, nlayers, dropout).to(device)
 
@@ -143,11 +146,11 @@ import copy
 import time
 
 criterion = nn.CrossEntropyLoss()
-lr = 5.0  # learning rate
+lr = 0.1  # learning rate
 optimizer = torch.optim.SGD(model.parameters(), lr=lr)
 scheduler = torch.optim.lr_scheduler.StepLR(optimizer, 1.0, gamma=0.95)
 
-def train(model: nn.Module) -> None:
+def train(model: nn.Module,epoch) -> None:
     model.train()  # turn on train mode
     total_loss = 0.
     log_interval = 200
@@ -199,10 +202,10 @@ def begin():
     best_val_loss = float('inf')
     epochs = 6
     best_model = None
-
+    print(val_iter)
     for epoch in range(1, epochs + 1):
         epoch_start_time = time.time()
-        train(model)
+        train(model,epoch)
         val_loss = evaluate(model, val_data)
         val_ppl = math.exp(val_loss)
         elapsed = time.time() - epoch_start_time
@@ -216,4 +219,41 @@ def begin():
             best_model = copy.deepcopy(model)
 
         scheduler.step()
+        #if epoch%10==0:
         torch.save(model.state_dict(), os.path.join('checkpoints',f'{epoch}.pth'))
+
+def demo(model,text):
+    model.eval()
+    model.to('cpu')
+    text_dataset=[text]
+    data=data_process(text_dataset)
+
+    seq_len = data.size(0)
+    src_mask = generate_square_subsequent_mask(bptt)
+    if seq_len != bptt:
+        src_mask = src_mask[:seq_len, :seq_len]
+    output = model(data, src_mask)
+    output=F.softmax(output,dim=2)
+    output=output.argmax(dim=2)
+    output=output[0,:]
+    list_output=[]
+    for i in range(output.size(0)):
+        list_output.append(output[i].item())
+    output=vocab.lookup_tokens(list_output)
+    print(output)
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--task', type=str, default='train',
+                        help='Task to train/demo (default: train)')
+    parser.add_argument('--load', type=str, default='checkpoints/6.pth',
+                        help='Checkpoint path')
+    parser.add_argument('--text', type=str, default=' Super Mario Land is a 1989 side @-@ scrolling platform video game , the first in the Super Mario Land series , developed and published by Nintendo for their Game Boy.',
+                        help='Demo text')
+    args = parser.parse_args()
+    if args.task=='train':
+        begin()
+    elif args.task=='demo':
+        checkpoint = torch.load(args.load)
+        model.load_state_dict(checkpoint)
+        demo(model,args.text)
