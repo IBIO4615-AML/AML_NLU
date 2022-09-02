@@ -55,7 +55,7 @@ Transformers is a powerfull architecture to NLU. This model allow us to predict 
 
 ```bash
 
-python transformers.py --task train
+python transformer.py --task train
 
 ```
 
@@ -63,13 +63,15 @@ python transformers.py --task train
 
 ```bash
 
-python transformers.py --task demo --text Try your own text and @-@ the performance
+python transformer.py --task demo --text Try your own text and @-@ the performance
 
 ```
 
 #### Note: Use the @-@ to generate the word
 
 3. We don't want you to do the perfect model, just prupose 4 different experiments and show us the input text and the prediction text in each experiment.
+
+From: https://pytorch.org/tutorials/beginner/transformer_tutorial.html
 
 ## 3. Attention visualization (1 Point)
 
