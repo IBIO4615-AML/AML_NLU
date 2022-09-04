@@ -110,7 +110,7 @@ image = Image.open(requests.get(url, stream=True).raw)
 inputs = processor(text=["image of two cats","image of two cats sleeping"], images=image, return_tensors="pt", padding=True)
 ```
 
-4. Run the code and check the probability of each description for your clasiffication result in the Validation dataset. You don't have to train the model!
+4. Run the code and check the probability of each description for your clasiffication result in the Test dataset. You don't have to train the model!
 5. Submit the code and answer if you thing CLIP can classify Medical Image.
 
 #### Report
