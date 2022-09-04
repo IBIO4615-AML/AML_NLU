@@ -42,7 +42,7 @@ More similar to: 'bad'
  ('shabby', 0.5749340653419495)]
 ``` 
 
-6. Now, search a tokenizer already trained and compare your results!
+6. Now, search a word embedding that is already trained and compare your results!
 7. Submit the words you use and the most similar words. Also submit the code.
 
 ## 2. Transformers training to text generation using Wikitex2 (1.5 Points)
