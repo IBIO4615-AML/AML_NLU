@@ -41,6 +41,9 @@ More similar to: 'bad'
  ('shabby', 0.5749340653419495)]
 ``` 
 
+6. Now, search a tokenizer already trained and compare your results!
+7. Submit the words you use and the most similar words. Also submit the code.
+
 ## 2. Transformers training to text generation using Wikitex2 (1.5 Points)
 
 Transformers is a powerfull architecture to NLU. This model allow us to predict the missing words using the context. Wikitext is a database of Wikipedia's articles but substracting some words. One extract of one text example is the following:
@@ -55,21 +58,21 @@ Transformers is a powerfull architecture to NLU. This model allow us to predict 
 
 ```bash
 
-python transformer.py --task train
+python3 transformer.py --task train
 
 ```
 
-2. You also can prove the model using the following command:
+2. Now, modify the code to have demo, where we have a text as an input and print the prediction with the following comand.
 
 ```bash
 
-python transformer.py --task demo --text Try your own text and @-@ the performance
+python3 transformer.py --task demo --text Try your own text and @-@ the performance
 
 ```
 
 #### Note: Use the @-@ to generate the word
 
-3. We don't want you to do the perfect model, just prupose 4 different experiments and show us the input text and the prediction text in each experiment.
+3. We don't want you to do the perfect model, just prupose 3 different experiments and show us the input text and the prediction text in each experiment.
 
 From: https://pytorch.org/tutorials/beginner/transformer_tutorial.html
 
@@ -92,21 +95,23 @@ In this section we want to test what limitations the CLIP model can have. For th
 
 ![image](https://user-images.githubusercontent.com/98495468/187804121-3107c28a-1fc8-47eb-8cf0-e8fb9721da4d.png)
 
-1. Select an image from internet or take a photo that you think could be difficult to classify.
-2. Open the Codes/caption_classification.py code. Add your image with the url or by uploading a file.
+1. Download the dataset in this page https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia.
+3. Open the Codes/caption_classification.py code. Then, load the images and his labels (the name of the image have the labels)
 
 ```bash
 #Example
 url = "http://images.cocodataset.org/val2017/000000039769.jpg"
 image = Image.open(requests.get(url, stream=True).raw)
 ```
-3. Change the two posible descriptions of the image.
+3. Modify the following line in the code to predict if the image is a Bacterial Pneumonia, Viral Pneumonia or Normal.
+
 ```bash
 #Example
 inputs = processor(text=["image of two cats","image of two cats sleeping"], images=image, return_tensors="pt", padding=True)
 ```
 
-4. Run the code and check the probability of each description for your clasiffication result.
+4. Run the code and check the probability of each description for your clasiffication result in the Validation dataset. You don't have to train the model!
+5. Submit the code and answer if you thing CLIP can classify Medical Image.
 
-5. Try different pairs of descriptions, look for   the most specific descriptions in order to see  limitations of CLIP model.
-6. Submit two description that can confuse the model, so that shown similar probability between them. The highest probability should be less than 0.6. Submit also the image.
+#### Report
+All the answers to the questions and the results from each point should be in a PDF. It doesn't have an specific format but be clear whit what is the question you are answer. Don't forget to submit the code of each point.
