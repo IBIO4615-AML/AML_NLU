@@ -223,24 +223,8 @@ def begin():
         torch.save(model.state_dict(), os.path.join('checkpoints',f'{epoch}.pth'))
 
 def demo(model,text):
-    model.eval()
-    model.to('cpu')
-    text_dataset=[text]
-    data=data_process(text_dataset)
-
-    seq_len = data.size(0)
-    src_mask = generate_square_subsequent_mask(bptt)
-    if seq_len != bptt:
-        src_mask = src_mask[:seq_len, :seq_len]
-    output = model(data, src_mask)
-    output=F.softmax(output,dim=2)
-    output=output.argmax(dim=2)
-    output=output[0,:]
-    list_output=[]
-    for i in range(output.size(0)):
-        list_output.append(output[i].item())
-    output=vocab.lookup_tokens(list_output)
-    print(str.join(" ",output))
+    # YOUR CODE HERE
+    pass
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
