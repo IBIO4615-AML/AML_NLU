@@ -97,7 +97,7 @@ In this section we want to test what limitations the CLIP model can have. For th
 ![image](https://user-images.githubusercontent.com/98495468/187804121-3107c28a-1fc8-47eb-8cf0-e8fb9721da4d.png)
 
 1. Download the dataset in this page https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia.
-3. Open the Codes/caption_classification.py code. Then, load the images and his labels (the name of the image have the labels)
+3. Open the Codes/caption_classification.py code. Then, load the images and the labels (the name of the image have the label)
 
 ```bash
 #Example
